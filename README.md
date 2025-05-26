@@ -1,9 +1,7 @@
 
 
 ```markdown
-# Supasoko – Farmer-to-Market E-Commerce Platform
-
-![Supasoko Screenshot](https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80)
+# Supasoko – Farmer-to-Market E-Commerce Platform (https://raeyn22.github.io/#pricing)
 
 A web platform connecting African farmers directly to buyers with real-time market price alerts (Demo data in KSh).
 
@@ -82,24 +80,11 @@ supasoko/
 MIT License - Free for educational and commercial use
 
 ## Support
-For issues, please [open a GitHub ticket](https://github.com/yourusername/supasoko/issues).
+For issues, please [open a GitHub ticket](https://github.com/Raeyn22/supasoko/issues).
 
 ---
 **Farm Smart, Sell Smarter** 🌱📈  
 *Empowering African Farmers Through Technology*
 ```
 
-### Key Elements Included:
-1. **Visual Header** with project image
-2. **Feature Highlights** section
-3. **Tech Stack** breakdown
-4. **Setup Instructions** for both frontend/backend
-5. **Environment Variables** configuration guide
-6. **Deployment Notes** for Vercel/Render
-7. Clean **directory structure**
-8. License and support info
 
-Tip: Replace placeholder links (`yourusername`, `#`) with your actual project URLs before use. For a real deployment, you might want to add:
-- Screenshots
-- API documentation (if backend exists)
-- Contribution guidelines
