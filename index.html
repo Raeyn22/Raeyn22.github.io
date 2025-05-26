@@ -122,6 +122,29 @@
             .price-alert-card {
                 margin-top: 2rem;
             }
+        
+        /* Add to your existing CSS */
+.price-table th {
+  background-color: var(--primary-green);
+  color: white;
+}
+
+.price-table tr:hover {
+  background-color: rgba(46, 139, 87, 0.1);
+}
+
+.trend-up {
+  color: #dc3545; /* Red for upward trend */
+}
+
+.trend-down {
+  color: #28a745; /* Green for downward trend */
+}
+
+.trend-stable {
+  color: #6c757d; /* Gray for stable */
+}
+
         }
     </style>
 </head>
@@ -214,24 +237,27 @@
     </section>
 
     <!-- Price Alert Section -->
-    <section id="pricing" class="container mb-5">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h2>Real-Time Market Prices</h2>
-                <p class="lead">Stay informed about current market prices in your region to get the best value for your crops.</p>
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Commodity</th>
-                                <th>Price (Ksh./kg)</th>
-                                <th>Trend</th>
-                            </tr>
-                        </thead>
-                        <tbody id="priceTable">
-                            <!-- Prices will be loaded here via JavaScript -->
-                        </tbody>
-                    </table>
+    <select class="form-select" id="cropSelect" required>
+  <option value="">Choose...</option>
+  <option value="maize">Maize</option>
+  <option value="rice">Rice</option>
+  <option value="beans">Beans</option>
+  <option value="tomatoes">Tomatoes</option>
+  <option value="onions">Onions</option>
+  <option value="sukuma">Sukuma Wiki</option>
+</select>
+    <div class="alert alert-info mt-4">
+  <h5><i class="bi bi-info-circle"></i> Market Insights</h5>
+  <ul>
+    <li>Maize prices rising due to delayed rains in Rift Valley</li>
+    <li>Tomato surplus in Nakuru causing price fluctuations</li>
+    <li>Stable onion supply from Mwea irrigation scheme</li>
+  </ul>
+</div>
+        <!-- Data will be inserted here by JavaScript -->
+           </tbody>
+             </table>
+                
                 </div>
             </div>
             <div class="col-md-6">
@@ -487,15 +513,57 @@
                 image: "https://images.unsplash.com/photo-1594282486552-c4567cba5c9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
             }
         ];
-        
-        // Sample price data
-        const priceData = [
-            { commodity: "Maize", price: 720, trend: "up" },
-            { commodity: "Rice", price: 850, trend: "stable" },
-            { commodity: "Beans", price: 910, trend: "down" },
-            { commodity: "Tomato", price: 1250, trend: "up" },
-            { commodity: "Onion", price: 600, trend: "stable" }
-        ];
+       // Updated price data for Kenyan markets (in KSh)
+       const priceData = [
+           { 
+                commodity: "Maize", 
+                price: 65, 
+                unit: "per kg",
+                market: "Nairobi",
+                trend: "up",
+                change: "+5" 
+         },
+  { 
+    commodity: "Rice", 
+    price: 220, 
+    unit: "per kg",
+    market: "Mombasa",
+    trend: "stable",
+    change: "0" 
+  },
+  { 
+    commodity: "Beans", 
+    price: 180, 
+    unit: "per kg",
+    market: "Kisumu",
+    trend: "down",
+    change: "-10" 
+  },
+  { 
+    commodity: "Tomatoes", 
+    price: 120, 
+    unit: "per crate",
+    market: "Nakuru",
+    trend: "up",
+    change: "+15" 
+  },
+  { 
+    commodity: "Onions", 
+    price: 85, 
+    unit: "per kg",
+    market: "Eldoret",
+    trend: "stable",
+    change: "0" 
+  },
+  { 
+    commodity: "Sukuma Wiki", 
+    price: 25, 
+    unit: "per bunch",
+    market: "Nairobi",
+    trend: "down",
+    change: "-5" 
+  }
+]; 
         
         // Initialize the app
         document.addEventListener('DOMContentLoaded', function() {
@@ -525,21 +593,27 @@
         }
         
         function loadPrices() {
-            priceTable.innerHTML = '';
-            priceData.forEach(item => {
-                const trendIcon = item.trend === 'up' ? 'bi-arrow-up-circle-fill text-danger' : 
-                                item.trend === 'down' ? 'bi-arrow-down-circle-fill text-success' : 
-                                'bi-dash-circle-fill text-secondary';
-                const row = `
-                    <tr>
-                        <td>${item.commodity}</td>
-                        <td>₦${item.price.toLocaleString()}</td>
-                        <td><i class="bi ${trendIcon}"></i></td>
-                    </tr>
-                `;
-                priceTable.innerHTML += row;
-            });
-        }
+  priceTable.innerHTML = '';
+  priceData.forEach(item => {
+    const trendIcon = item.trend === 'up' ? 'bi-arrow-up-circle-fill text-danger' : 
+                      item.trend === 'down' ? 'bi-arrow-down-circle-fill text-success' : 
+                      'bi-dash-circle-fill text-secondary';
+    
+    const row = `
+      <tr>
+        <td>${item.commodity}</td>
+        <td>KSh ${item.price.toLocaleString()}</td>
+        <td>${item.unit}</td>
+        <td>${item.market}</td>
+        <td>
+          <i class="bi ${trendIcon}"></i>
+          ${item.change !== "0" ? item.change : ''}
+        </td>
+      </tr>
+    `;
+    priceTable.innerHTML += row;
+  });
+}
         
         function setupEventListeners() {
             // Auth modal toggle
