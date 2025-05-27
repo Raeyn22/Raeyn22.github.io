@@ -1,9 +1,10 @@
 
 
 
-# Supasoko – Farmer-to-Market E-Commerce Platform 
+🌱# Supasoko – Farmer-to-Market E-Commerce Platform 
 
-A web platform connecting African farmers directly to buyers with real-time market price alerts (Demo data in KSh).
+A web platform connecting African farmers directly to buyers with real-time market price alerts.
+
 **PITCH-DECK** here: 
 ```
 ## Key Features
