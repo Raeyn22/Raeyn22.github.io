@@ -5,7 +5,7 @@
 
 A web platform connecting African farmers directly to buyers with real-time market price alerts.
 
-📊📉**PITCH-DECK** here: 
+📊📉**PITCH-DECK** here: https://www.canva.com/design/DAGoofPsPKM/I46VYo8opM1duVdFuNxNbQ/edit?utm_content=DAGoofPsPKM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 ```
 ## Key Features
 - **Farmer-Buyer Marketplace**: List and discover fresh produce
