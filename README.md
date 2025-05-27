@@ -1,10 +1,11 @@
 
 
-```markdown
-# Supasoko – Farmer-to-Market E-Commerce Platform (https://raeyn22.github.io/#pricing)
+
+# Supasoko – Farmer-to-Market E-Commerce Platform 
 
 A web platform connecting African farmers directly to buyers with real-time market price alerts (Demo data in KSh).
-
+**PITCH-DECK** here: 
+```
 ## Key Features
 - **Farmer-Buyer Marketplace**: List and discover fresh produce
 - **Price Alert System**: Get notified when crop prices hit targets
@@ -21,9 +22,9 @@ A web platform connecting African farmers directly to buyers with real-time mark
 **Backend**:  
 ✔ Supabase (Auth + Database)  
 ✔ Python (FastAPI - optional backend)  
-
+```
 ## Live Demo
-[View on Vercel/Render](#) *(Add your deployment link here)*
+[Github pages](#) *(https://raeyn22.github.io/#pricing)*
 
 ## Setup Instructions
 
@@ -85,6 +86,8 @@ For issues, please [open a GitHub ticket](https://github.com/Raeyn22/supasoko/is
 ---
 **Farm Smart, Sell Smarter** 🌱📈  
 *Empowering African Farmers Through Technology*
-```
+
+NOTE : This project was made with **DeepSeek AI.**
+
 
 
